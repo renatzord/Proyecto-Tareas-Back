@@ -1,23 +1,26 @@
 package com.test.renato.back.Modelo;
 
-import javax.persistence.*;
-import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 
 @Entity
-@Table(name = "tareas")
-public class Tareas implements Serializable {
-    @Id
-    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="tareas_sequence")
-    @SequenceGenerator(name="tareas_sequence", sequenceName="tareas_sequence", allocationSize=100)
-    private Long id;
+@Table(name="tareas")
+public class Tareas {
 
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     private String nombre;
     private String descripcion;
     private boolean completada;
     private boolean eliminar;
 
-    
     public Tareas() {
     }
 
@@ -27,7 +30,6 @@ public class Tareas implements Serializable {
         this.completada = completada;
         this.eliminar = eliminar;
     }
-    
 
     public Long getId() {
         return id;
@@ -64,10 +66,10 @@ public class Tareas implements Serializable {
     public boolean isEliminar() {
         return eliminar;
     }
-
     public void setEliminar(boolean eliminar) {
         this.eliminar = eliminar;
     }
+
     //toString() para propósitos de depuración
     @Override
     public String toString() {
@@ -79,4 +81,5 @@ public class Tareas implements Serializable {
                 ", eliminar=" + eliminar +
                 '}';
     }
+
 }

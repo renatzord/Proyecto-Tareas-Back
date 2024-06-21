@@ -9,6 +9,8 @@ import org.springframework.stereotype.Repository;
 
 import com.test.renato.back.Modelo.Tareas;
 
+
+
 @Repository
 public interface ActividadRepository extends JpaRepository<Tareas, Long> {
 

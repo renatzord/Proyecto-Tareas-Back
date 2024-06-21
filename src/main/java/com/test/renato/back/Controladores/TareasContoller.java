@@ -7,9 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-
 import com.test.renato.back.Modelo.Tareas;
 import com.test.renato.back.Servicios.TareasService;
+
 
 @RestController
 @RequestMapping("/api/tareas")
@@ -17,7 +17,7 @@ public class TareasContoller {
     @Autowired
     private TareasService tareasService;
 
-    @GetMapping
+    @GetMapping("/listar")
     public List<Tareas> getAllTareas() {
         return tareasService.findAll();
     }
@@ -33,7 +33,7 @@ public class TareasContoller {
         return tareasService.findByNombre(nombre);
     }
 
-    @PostMapping
+    @PostMapping("/crear")
     public Tareas createTarea(@RequestBody Tareas tarea) {
         return tareasService.save(tarea);
     }

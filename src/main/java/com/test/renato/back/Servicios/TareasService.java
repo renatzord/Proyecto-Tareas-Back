@@ -2,12 +2,13 @@ package com.test.renato.back.Servicios;
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.test.renato.back.Modelo.Tareas;
 import com.test.renato.back.Repositorio.ActividadRepository;
+
 
 @Service
 @Transactional
