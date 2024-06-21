@@ -1,10 +1,14 @@
 package com.test.renato.back.Modelo;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+
+
+
 import javax.persistence.Table;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 
 @Entity
@@ -70,7 +74,7 @@ public class Tareas {
         this.eliminar = eliminar;
     }
 
-    //toString() para propósitos de depuración
+    
     @Override
     public String toString() {
         return "Actividad{" +

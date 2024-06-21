@@ -17,14 +17,11 @@ public interface ActividadRepository extends JpaRepository<Tareas, Long> {
     public List<Tareas> findByNombre(String nombre);
     
 
-    @Query("SELECT t FROM Tareas t WHERE t.eliminar = false")
+    @Query("SELECT t FROM Tareas t WHERE t.eliminar = false AND t.completada = false")
     List<Tareas> findAllActive();
 
-    @Query("SELECT t FROM Tareas t WHERE t.id = :id AND t.eliminar = false")
+    @Query("SELECT t FROM Tareas t WHERE t.id = :id AND t.eliminar = false AND t.completada = false")
     Optional<Tareas> findActiveById(Long id);
-
-    public Tareas save(Tareas tarea);
-
 
     public Optional<Tareas> findById(Long id);
 }

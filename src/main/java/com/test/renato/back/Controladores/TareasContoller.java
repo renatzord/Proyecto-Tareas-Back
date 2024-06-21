@@ -12,6 +12,7 @@ import com.test.renato.back.Servicios.TareasService;
 
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/api/tareas")
 public class TareasContoller {
     @Autowired
@@ -38,7 +39,7 @@ public class TareasContoller {
         return tareasService.save(tarea);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/update/{id}")
     public ResponseEntity<Tareas> updateTarea(@PathVariable Long id, @RequestBody Tareas tarea) {
         tarea.setId(id);
         Tareas updatedTarea = tareasService.update(tarea);
@@ -49,9 +50,19 @@ public class TareasContoller {
         }
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<Void> deleteTarea(@PathVariable Long id) {
         tareasService.deleteById(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @PutMapping("/complete/{id}")
+    public ResponseEntity<Tareas> markTareaAsCompleted(@PathVariable Long id) {
+        try {
+            Tareas tarea = tareasService.markAsCompleted(id);
+            return ResponseEntity.ok(tarea);
+        } catch (RuntimeException e) {
+            return ResponseEntity.notFound().build();
+        }
     }
 }

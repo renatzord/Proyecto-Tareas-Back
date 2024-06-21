@@ -17,9 +17,6 @@
 		<java.version>17</java.version>
 	</properties>
 	<dependencies>
-		
-	
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -38,28 +35,16 @@
 			<artifactId>postgresql</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-
-		
-    <!-- Dependencia de JPA API -->
     <dependency>
         <groupId>javax.persistence</groupId>
         <artifactId>javax.persistence-api</artifactId>
         <version>2.2</version>
     </dependency>
-
-
-
-    <!-- Dependencia de JTA API -->
     <dependency>
         <groupId>javax.transaction</groupId>
         <artifactId>javax.transaction-api</artifactId>
         <version>1.3</version>
     </dependency>
-
-
-   
-    
-    <!-- Dependencia de Spring Boot Starter Test -->
     <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-test</artifactId>
